@@ -1,0 +1,103 @@
+
+   <section class="slice slice-lg bg-cover bg-size--cover" style="background-image: url(quick-ui/src/assets/img/backgrounds/img-1.jpg);">
+        <!-- Mask -->
+        <span class="mask bg-primary opacity-9"></span>
+        <!-- Container -->
+        <div class="container pt-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <h2 class="mb-4 text-center text-white">How can we help?</h2>
+
+                    
+                    <form action="/search" method="get">
+                        <div class="form-group bg-neutral rounded-pill mb-0 px-2 py-2 shadow">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group input-group-merge shadow-none">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-transparent border-0"><i data-feather="search"></i></span>
+                                        </div>
+                                        <input class="form-control form-control-flush shadow-none" type="text" name="search" placeholder="Search for answers ...">
+
+                                        <div class="col-auto">
+                                        <button class="btn btn-block btn-dark rounded-pill" type="submit">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+
+
+                </div>
+            </div>
+        </div>
+        <div class="container position-relative zindex-100">
+            <div class="my-5 text-center">
+                <h6 class="text-white font-weight-light mb-0">or choose from any options below to get started</h6>
+            </div>
+            <!-- Categories -->
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-12">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 mb-xl-n8">
+                            <div class="card hover-translate-y-n10 hover-shadow-lg">
+                                <div class="card-body p-5 text-center">
+                                    <div class="pb-4">
+                                        <img alt="Image placeholder" src="quick-ui/src/assets/img/svg/icons/Settings.svg" class="svg-inject img-fluid" style="height: 40px">
+                                    </div>
+                                    <div class="pt-2">
+                                        <a href="/inventories" class="h6 stretched-link mb-0">View Inventories</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 mb-xl-n8">
+                            <div class="card hover-translate-y-n10 hover-shadow-lg">
+                                <div class="card-body p-5 text-center">
+                                    <div class="pb-4">
+                                        <img alt="Image placeholder" src="quick-ui/src/assets/img/svg/icons/Folder.svg" class="svg-inject img-fluid" style="height: 40px">
+                                    </div>
+                                    <div class="pt-2">
+                                        <a href="/memos" class="h6 stretched-link mb-0">View Memos</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 mb-xl-n8">
+                            <div class="card hover-translate-y-n10 hover-shadow-lg">
+                                <div class="card-body p-5 text-center">
+                                    <div class="pb-4">
+                                        <img alt="Image placeholder" src="quick-ui/src/assets/img/svg/icons/Like_UI.svg" class="svg-inject img-fluid" style="height: 40px">
+                                    </div>
+                                    <div class="pt-2">
+                                        <%= link_to "Create Inventory", new_user_inventory_path(current_user), class: "text-white"%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 mb-xl-n8">
+                            <div class="card hover-translate-y-n10 hover-shadow-lg">
+                                <div class="card-body p-5 text-center">
+                                    <div class="pb-4">
+                                        <img alt="Image placeholder" src="quick-ui/src/assets/img/svg/icons/Like_UI.svg" class="svg-inject img-fluid" style="height: 40px">
+                                    </div>
+                                    <div class="pt-2">
+                                        <%= link_to "Create Memo", new_user_memo_path(current_user), class: "text-white"%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SVG Separator -->
+        <div class="shape-container shape-position-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z"></path>
+            </svg>
+        </div>
+    </section>
+

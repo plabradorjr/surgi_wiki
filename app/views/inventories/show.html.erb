@@ -1,0 +1,48 @@
+<div>
+
+<div class="container d-flex justify-content-center pt-5">
+
+  <div class="card bg-white">
+    <%if @inventory.picture? %>
+      <%= image_tag(@inventory.picture.url, class: "card-img-top", style: "max-width: 500px; max-height: 500px;")%>
+    <%else%>
+      <img class="card-img-top" src="../../quick-ui/src/assets/img/theme/light/no-img-upload-yet.jpg" alt="no image" style="max-width: 500px; max-height: 500px;">
+    <%end%>
+    <div class="card-body bg-white">
+      <h5 class="card-title text-dark"><%= @inventory.name %></h5>
+      <small class="card-text text-dark"> Location:</small>
+      <p class="small card-text text-dark"><%=@inventory.location %></p>
+
+      <% if @inventory.services.any? %>
+            <small class="card-text text-dark">Services:</small> <br>
+            <%@inventory.services.each do |i|%>
+            <span class="card-text text-dark"><%=link_to i.name, service_path(i), class: "small text-blue" %></span>
+            <% end %>
+      <% end %>
+
+    </div>
+
+    <p class="card-footer bg-white"><small class="text-dark">Created <%= time_ago_in_words(@inventory.created_at) %> ago, by: <%= @inventory.user.username.capitalize %>.
+      edited <%= time_ago_in_words(@inventory.updated_at) %> ago</small>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="text-center bg-black rounded">
+  
+
+        <div class="card-footer text-muted">
+          <%= link_to "Edit", edit_inventory_path(@inventory), class: "btn btn-sm btn-outline-warning" %>
+          <%= link_to "Delete", inventory_path(@inventory), class: "btn btn-sm btn-outline-warning", method: :delete, data: {confirm: "Are you sure?"} if current_user == @inventory.user%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

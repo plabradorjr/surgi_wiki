@@ -1,0 +1,42 @@
+<div class="container d-flex flex-column">
+  <div class="row align-items-center justify-content-center min-vh-100">
+    <div class="col-md-6 col-lg-5 col-xl-4 py-6 py-md-0">
+      <h3>Sign up</h3>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <%= f.label :username, class: "form-control-label"%><br />
+          <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control form-control-prepend"%>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, class: "form-control-label"%><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-prepend", placeholder: "name@example.com" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, class: "form-control-label"%>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-prepend" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, class: "form-control-label"%><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-prepend" %>
+        </div>
+        <br>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-block btn-primary" %>
+        </div>
+        <br>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

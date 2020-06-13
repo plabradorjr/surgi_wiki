@@ -1,0 +1,32 @@
+  
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <% if params[:user_id]%>
+        <br><span class="h4 text-secondary"> <%= "🤓 " + @user.username + "'s "%> </span><span class="h4 text-secondary">Inventories 🤓</span><br><br>
+        <%else%>
+        <br><span style="font-size: 50px;"> 🎉 &nbsp; </span><span class="h4 text-secondary">All Inventories</span><br><br>
+        <%end%>
+        </div>
+
+
+      </div>
+      <div class="col text-center">
+        <br>
+        
+        <table class="table table-dark bg-light-secondary">
+            <tbody>
+          <% @inventories.each do |i| %>
+            <tr>
+            <th scope="row"><a href="/inventories/<%=i.id%>" class="text-dark"><%= i.name.capitalize %></a></th>
+            
+            </tr>
+          <% end %>
+        </table>
+        <br><br>
+        <%= will_paginate @inventories %>
+
+      </div>
+    </div>
+  </div>

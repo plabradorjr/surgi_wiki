@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 pt-4 bg-brand-facebook rounded">
+      <%= form_for(@memo) do |f| %>
+        <div class="form-group row">
+          <%= f.label :title, class: "col-2 col-form-label text-white" %>
+          <div class="col-10">
+            <%= f.text_field :title, class: "form-control rounded", placeholder: "Title of Memo" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :description, class: "col-2 col-form-label text-white" %>
+          <div class="col-10"> 
+            <%= f.text_area :description, rows: 8, class: "form-control", placeholder: "Tell us more" %>
+          </div>
+        </div>
+
+
+        <!-- services -->
+        <div class="form-group row">
+          <%= f.label :service, class: "col-2 col-form-label text-white" %>
+          <div class="col-10"> 
+            <%= f.collection_select(:service_ids, Service.all, :id, :name,
+            { prompt: "press and hold ctrl to choose multiple services"}, { multiple: true, size: 10, class: "custom-select" }) %>
+          </div>
+        </div>
+
+       
+
+        <div class="form-group row justify-content-center">
+          <%= f.submit class: "btn btn-outline-white btn-lg mt-3" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-12 justify-content-center">
+    <div class="mb-3 text-center">
+        <br>
+      <%= link_to '[ Cancel and return to memos listing ]', memos_path, class: "text-info text-center" %>
+    </div>
+    </div>
+  </div>
+</div>

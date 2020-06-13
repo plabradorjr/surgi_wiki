@@ -1,0 +1,28 @@
+  
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <br><span style="font-size: 50px;"> 👩‍⚕️ &nbsp; </span><span class="h4 text-secondary">All Teams  </span> <span style="font-size: 50px;"> &nbsp;  👨‍⚕️</span><br><br>
+        </div>
+
+
+      </div>
+      <div class="col text-center">
+        <br>
+        
+        <table class="table table-dark bg-light-secondary">
+            <tbody>
+          <% @services.order(:name).each do |i| %>
+            <tr>
+            <th scope="row"><a href="/services/<%=i.id%>" class="text-dark"><%= i.name.upcase %></a></th>
+            
+            </tr>
+          <% end %>
+        </table>
+        <br><br>
+        <%= will_paginate @services %>
+
+      </div>
+    </div>
+  </div>
